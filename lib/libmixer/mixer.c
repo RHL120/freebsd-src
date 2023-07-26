@@ -172,7 +172,7 @@ mixer_close(struct mixer *m)
  * The caller must manually assign the return value to `m->dev`.
  */
 struct mix_dev *
-mixer_get_dev(struct mixer *m, int dev)
+mixer_get_dev(const struct mixer *m, int dev)
 {
 	struct mix_dev *dp;
 
@@ -195,7 +195,7 @@ mixer_get_dev(struct mixer *m, int dev)
  * @param name		device name (e.g vol, pcm, ...)
  */
 struct mix_dev *
-mixer_get_dev_byname(struct mixer *m, const char *name)
+mixer_get_dev_byname(const struct mixer *m, const char *name)
 {
 	struct mix_dev *dp;
 
@@ -284,7 +284,7 @@ mixer_remove_ctl(mix_ctl_t *ctl)
  * Get a mixer control by id.
  */
 mix_ctl_t *
-mixer_get_ctl(struct mix_dev *d, int id)
+mixer_get_ctl(const struct mix_dev *d, int id)
 {
 	mix_ctl_t *cp;
 

@@ -102,13 +102,13 @@ __BEGIN_DECLS
 
 struct mixer *mixer_open(const char *);
 int mixer_close(struct mixer *);
-struct mix_dev *mixer_get_dev(struct mixer *, int);
-struct mix_dev *mixer_get_dev_byname(struct mixer *, const char *);
+struct mix_dev *mixer_get_dev(const struct mixer *, int);
+struct mix_dev *mixer_get_dev_byname(const struct mixer *, const char *);
 int mixer_add_ctl(struct mix_dev *, int, const char *,
     int (*)(struct mix_dev *, void *), int (*)(struct mix_dev *, void *));
 int mixer_add_ctl_s(mix_ctl_t *);
 int mixer_remove_ctl(mix_ctl_t *);
-mix_ctl_t *mixer_get_ctl(struct mix_dev *, int);
+mix_ctl_t *mixer_get_ctl(const struct mix_dev *, int);
 mix_ctl_t *mixer_get_ctl_byname(struct mix_dev *, const char *);
 int mixer_set_vol(struct mixer *, mix_volume_t);
 int mixer_set_mute(struct mixer *, int);
